@@ -1,2 +1,14 @@
-# Drowsiness-detection-based-on-Pupil-movement-behaviour
-A real-time drowsiness detection system based on pupil movement and behavior. It tracks blink rate, gaze direction, and fixation patterns using computer vision and machine learning. When fatigue is detected, alerts are triggered, making it useful for drivers, workplace safety, and healthcare monitoring.
+#python drowniness_yawn.py --webcam webcam_index from scipy.spatial import distance as dist
+from imutils.video import VideoStream from imutils import face_utils
+from threading import Thread import numpy as np
+import argparse import imutils import time import dlib import cv2 import os
+
+def alarm(msg): global alarm_status
+global alarm_status2 global saying
+
+while alarm_status: print('call')
+s = 'espeak "'+msg+'"' os.system(s)
+
+if alarm_status2: print('call') saying = True
+s = 'espeak "' + msg + '"' os.system(s)
+saying = False
